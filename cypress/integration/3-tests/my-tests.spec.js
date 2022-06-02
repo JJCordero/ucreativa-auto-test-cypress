@@ -7,5 +7,6 @@ describe('Mi primer Suite', () =>  {
 
     it('Mi segundo test', () => {
         cy.visit('https://booking.kayak.com/')
+        cy.get('#ss').should('be.')
     })
 })
