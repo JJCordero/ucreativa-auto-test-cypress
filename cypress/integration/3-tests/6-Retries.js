@@ -5,7 +5,7 @@ describe('Alias Element', () => {
         cy.get('#ss').type(value)
         cy.get('[aria-controls="xp__guests__inputs-container"]').parent().click()
         cy.get('#xp__guests__inputs-container').should('be.visible')
-        cy.get('.sb-group__field-adults button').eq(1).click()
+        cy.get('.sb-group__fieldX-adults button',{timeout:15000}).eq(1).click()
         cy.get('.xp__button [data-sb-id="main"]').click()
         cy.get('[data-testid="property-card"]').as('propertyCard')
         cy.get('@propertyCard').eq(0).find('[data-testid="title"]').invoke('text').then((myText) => {
