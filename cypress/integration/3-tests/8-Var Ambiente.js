@@ -27,5 +27,7 @@ describe('Alias Element', () => {
         })
         cy.get('@propertyCard').eq(0).find('[data-testid="review-score"]').find('div').eq(0).should('gt', 8)
         console.log('Hola1')
+
+        
     })
 })
