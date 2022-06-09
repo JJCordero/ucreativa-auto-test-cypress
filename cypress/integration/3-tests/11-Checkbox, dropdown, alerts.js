@@ -23,4 +23,32 @@ describe('Checkbox, dropdown y alerts', () => {
 
         cy.get('#autocomplete').should('have.value', 'Costa Rica')
     });
+
+    it('Alert', () => {
+        cy.visit('https://www.rahulshettyacademy.com/AutomationPractice/')
+        let name = 'Andy'
+        cy.get('#name').type(name)
+
+        cy.get('#alertbtn').click()
+        cy.on('window:alert', (text) => {
+                expect(text).to.equal(`Hello ${name}, share this practice page and share your knowledge`)
+        })
+               
+        cy.get('#name').type(name)
+        cy.get('#confirmbtn').click()
+        cy.on('window:confirm', (text) => {
+            expect(text).to.equal(`Hello ${name}, Are you sure you want to confirm?`)
+        })
+
+    });
+
+    it('Sweet Alert', () => {
+        cy.visit('https://sweetalert2.github.io/')
+        cy.get('.showcase.sweet .show-example-btn').click()
+        cy.get('#swal2-title').parent().should('be.visible')
+        cy.get('#swal2-html-container').should('have.text', 'You clicked the button!')
+        cy.get('[aria-labelledby="swal2-title"] .swal2-success-ring').should('have.css', 'color', 'rgb(165, 220, 134)')
+        
+    });
+
 })
