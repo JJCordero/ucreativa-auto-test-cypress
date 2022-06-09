@@ -3,6 +3,7 @@ describe('Checkbox, dropdown y alerts', () => {
         cy.visit('https://www.rahulshettyacademy.com/AutomationPractice/')
         cy.get('#checkBoxOption2').check().should('be.checked').and('have.value', 'option2')
         cy.get('#checkBoxOption2').uncheck().should('not.be.checked')
+        cy.get('input[type="checkbox"]').check(['option1', 'option3'])
     })
 
     it('Dropdown Estatico', () => {
