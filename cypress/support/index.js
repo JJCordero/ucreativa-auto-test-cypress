@@ -18,3 +18,21 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+/*
+before('', () => {
+    cy.log('**BEFORE INDEXJS**')
+})
+
+beforeEach('', () => {
+    cy.log('**BEFORE EACH INDEXJS**')
+})
+
+afterEach('', () => {
+    cy.log('**AFTEREACH INDEXJS**')
+})
+
+after('', () => {
+    cy.log('**AFTER INDEXJS**')
+})
+*/
