@@ -5,7 +5,7 @@ describe('Hooks', () => {
 
   
     before('', () => {
-        cy.log('**BEFORE**')
+        cy.log('**BEFORE**')        
     })
 
     beforeEach('', () => {
