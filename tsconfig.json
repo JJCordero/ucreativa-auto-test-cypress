@@ -3,5 +3,5 @@
       "allowJs": true,
       "types": ["cypress"]
     },
-    "include": ["**/*.*"]
+    "include": ["**/*.*", "cypress/integration/3-tests/12-Hooks.spec.js"]
   }
