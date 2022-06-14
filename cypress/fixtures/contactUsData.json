@@ -1,0 +1,26 @@
+[
+    {
+        "TCname":"Empty field",
+        "assertMsg":"Error: all fields are required"  ,  
+        "name":"Andy",
+        "lastName":"Arias",
+        "email":" ",
+        "message":"Empty field"
+    },
+    {
+        "TCname":"Invalid Email",
+        "assertMsg":"Error: Invalid email address"  ,  
+        "name":"Andy 2",
+        "lastName":"Arias 2",
+        "email":"",
+        "message":"Invalid Email"
+    },
+    {
+        "TCname":"Success",
+        "assertMsg":"Error: Invalid email address"  ,  
+        "name":"Andy",
+        "lastName":"Arias",
+        "email":"andyarias1234@gmail.com",
+        "message":"Success"
+    }
+]
