@@ -4,20 +4,20 @@
 describe('Hooks', () => {
 
   
-    before('', () => {
+    before(() => {
         cy.log('**BEFORE**')        
     })
 
-    beforeEach('', () => {
+    beforeEach(() => {
         cy.log('**BEFORE EACH**')
         cy.visit('https://www.rahulshettyacademy.com/AutomationPractice/')
     })
 
-    afterEach('', () => {
+    afterEach(() => {
         cy.log('**AFTEREACH**')
     })
 
-    after('', () => {
+    after(() => {
         cy.log('**AFTER**')
     })
 
