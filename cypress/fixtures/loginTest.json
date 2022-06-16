@@ -1,0 +1,22 @@
+[
+    {
+        "tc":"empty user",
+        "username":" ",
+        "password": "pass",
+        "errorMessage":"Username is required."
+    },
+
+    {
+        "tc":"empty password",
+        "username":"Username",
+        "password": " ",
+        "errorMessage":"The password field is empty."
+    },
+
+    {
+        "tc":"invalid Login",
+        "username":"username",
+        "password": "password",
+        "errorMessage":"The username or password you entered is incorrect. Lost your password?"
+    }
+]
