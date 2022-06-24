@@ -55,7 +55,7 @@ describe('Intercept', () => {
         cy.wait('@dummyRequest')
     })
 
-    it('CY Request - API', function () {
+    it.skip('CY Request - API', function () {
         cy.request('GET',
             'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty').then(response => {
                 console.log(response)
@@ -68,4 +68,5 @@ describe('Intercept', () => {
                 expect(response.duration).to.be.lt(2000)
             })
     })
+
 })
