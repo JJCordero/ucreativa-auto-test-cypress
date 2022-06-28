@@ -3,5 +3,15 @@
     "retries": {
         "runMode": 0,
         "openMode": 0
-    }
+    },
+    "reporter": "cypress-mochawesome-reporter",
+    "screenshotOnRunFailure": true,
+    "reporterOptions": {
+        "charts": true,
+        "reportDir": "cypress/report",
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false
+      }
 }

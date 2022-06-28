@@ -11,5 +11,5 @@ mochareports/report.json
 bdd-output
 /cypress/downloads
 cypress/results/*
-
+/cypress/report
 
