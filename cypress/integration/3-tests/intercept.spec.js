@@ -69,4 +69,46 @@ describe('Intercept', () => {
             })
     })
 
+
+    it.skip('Modificar response tarea', function () {
+        cy.visit('https://www.tse.go.cr/dondevotar/')
+
+        cy.intercept('POST', 'https://www.tse.go.cr/dondevotar/prRemoto.aspx/ObtenerDondeVotar', (req) => {
+            req.body = { "numeroCedula": "112500751" }
+            req.continue((resp) => {
+                expect(resp.statusCode).to.be.eq(200)
+            })
+        }).as('dummyRequest')
+
+
+        cy.get('#ncedula').type('603910829')
+        cy.get('#btn-consultar').click()
+
+        cy.wait('@dummyRequest')
+
+        cy.wait('@dummyRequest').should(({ request, response }) => {
+            cy.get('mapinfo-content div.text-blue span:nth-child(2)').should('have.length', '112500751')
+        })
+    })
+
+    it('Modificar response', function () {
+        cy.visit('https://www.tse.go.cr/dondevotar/')
+
+        cy.intercept({
+            method: 'GET',
+            url: 'https://www.tse.go.cr/dondevotar/prRemoto.aspx/ObtenerDondeVotar'
+        },
+            {
+                statusCode: 200,
+                body: [
+                    {{"numeroCedula":"112500751"} }
+                ]
+            }).as('bookingResponse')
+
+        cy.get('button.btn.btn-primary').click()
+
+        cy.wait('@bookingResponse').should(({ request, response }) => {
+            cy.get('tbody tr').should('have.length', response.body.length)
+        })
+
 })
